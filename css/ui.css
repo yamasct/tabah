@@ -1681,3 +1681,19 @@ page[size="A4"] {
 	padding: 20mm;
 /*margin: 10mm auto;*/
 }
+page .page{
+	padding: 0px;
+}
+page .page-header{
+	padding-bottom: 0px;
+	margin: 0px;
+}
+page .page-body{
+	padding-top: 50px;
+}
+page .page-body p{
+	padding-top: 70px;
+}
+page h3,h5{
+	margin-top: 2px;
+}

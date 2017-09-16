@@ -372,102 +372,64 @@ function r_f1DetailLembaga(packet) {
 		}else{
 			r_navigateTo(99); return false;
 		}
-		
+		data=[
+			{'head':'<h3>Surat Permohonan Bantuan hibah</h3>'+
+						'<h4>Pemerintah provinsi Jawa Barat</h4>'+
+						'<h5>jl. nin aja dulu siapa tau jodoh</h5>'},
+			{'body':[
+						{
+							'no'		:'99 / xvi / 9 / 2017',
+							'tanggal'	:'Bandung, 16 September 2017',
+							'perihal'	:'Permohonan bantuan hibah'
+						},
+						{
+							'kepada'	:'pemerintah kota bandung',
+							'isi'		:'orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ullamcorper massa. Aliquam et risus bibendum, posuere risus sed, rhoncus tellus. Phasellus blandit orci velit, vel consectetur eros imperdiet sed. Sed feugiat fermentum justo, id porta justo rhoncus sollicitudin. Mauris nibh lectus, mattis eget euismod et, egestas vitae elit. Nam luctus risus ut ante faucibus interdum. Suspendisse quis tincidunt augue, sed bibendum nunc. Nullam at dolor risus. Nam congue lacus sed accumsan pharetra. Quisque dui urna, tempus a tempus vitae, volutpat in ex. Quisque molestie eros nec mi condimentum faucibus. Mauris sed arcu convallis, sagittis enim in, pretium mi. Quisque blandit urna nec sagittis malesuada. Maecenas libero est, mattis vel nulla a, fringilla ultricies ante. Proin scelerisque volutpat metus, nec tincidunt urna luctus a.',
+							'pemohon'	:'Yayasan xxy'
+						}
+					]}
+			]
 		//--open
 		head	= '';
 		body	= '<div class="row no-head"><div class="container">';
 		part[0] = '<div class="col-md-offset-1 col-md-10">';
-		part[0] = part[0] +
-			// '<div class="cards flush" >'+
-				'<div class="col-md-12" >'+
-					'<div class="col-md-2" >'+
-						'<div class="group-box" >'+
-							'<div class="icon-set bg-green">'+
-								'<span class="fa fa-map-marker fa-2x"></span>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="col-md-8">'+
-						'<center>'+
-							'<h3>Surat Permohonan Bantuan hibah</h3>'+
-							'<h4>Pemerintah provinsi Jawa Barat</h4>'+
-							'<h5>alamat</h5>'+
-						'</center>'+
-					'</div>'+
+		part[1] = '<page size="A4">'+
+				'<div class="page-header">'+
+					'<center>'+
+						data[0].head+
+					'</center>'+
 				'</div>'+
-				'<div class="col-md-6">'+
-					'<div class="col-md-4">'+
-					'<div class="row">'+
+				'<div class="page-body">'+
+					'<div class="col-md-2 page">'+
 						'<h5>No</h5>'+
 					'</div>'+
+					'<div class="col-md-4 page">'+
+						'<h5>: '+data[1].body[0].no+'</h5>'+
 					'</div>'+
-					'<div class="col-md-8">'+
-						'<h5>: 99 / xvi / 9 / 2017</h5>'+
+					'<div class="col-md-6 text-right page">'+
+						'<h5>'+data[1].body[0].tanggal+'</h5>'+
 					'</div>'+
-					'<div class="col-md-4">'+
+					'<div class="col-md-2 page">'+
 						'<h5>Perihal</h5>'+
 					'</div>'+
-					'<div class="col-md-8">'+
-						'<h5>: Permohonan bantuan hibah</h5>'+
+					'<div class="col-md-8 page">'+
+						'<h5>: '+data[1].body[0].perihal+'</h5>'+
 					'</div>'+
-				'</div>'+
-				'<div class="col-md-6 text-right">'+
-					'<h5>Kepada sang pemikat hati</h5>'+
-				'</div>'+
-				'<div class="col-md-12">'+
-				'<br>'+
+					'<div class="clearfix"></div>'+
+					'<div>'+
 					'<p>'+
-					'kepada pemerintah kota bandung<br>'+
-					'orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ullamcorper massa. Aliquam et risus bibendum, posuere risus sed, rhoncus tellus. Phasellus blandit orci velit, vel consectetur eros imperdiet sed. Sed feugiat fermentum justo, id porta justo rhoncus sollicitudin. Mauris nibh lectus, mattis eget euismod et, egestas vitae elit. Nam luctus risus ut ante faucibus interdum. Suspendisse quis tincidunt augue, sed bibendum nunc. Nullam at dolor risus. Nam congue lacus sed accumsan pharetra. Quisque dui urna, tempus a tempus vitae, volutpat in ex. Quisque molestie eros nec mi condimentum faucibus. Mauris sed arcu convallis, sagittis enim in, pretium mi. Quisque blandit urna nec sagittis malesuada. Maecenas libero est, mattis vel nulla a, fringilla ultricies ante. Proin scelerisque volutpat metus, nec tincidunt urna luctus a.'+
+						'kepada '+data[1].body[1].kepada+'<br><br>'+
+						data[1].body[1].isi+
 					'</p>'+
-				'</div>'+
-				'<div class="col-md-offset-8 col-md-4">'+
-					'<h5>'+
-					'<center>'+
-					'bandung, 16 September 2017 <br><br><br><br><br><br><br>'+
-					'seseorang'+
-					'</center>'+
-					'</h5>'+
-				'</div>'+
-				'<div class="clearfix">'+
-				'</div>';
-			// '</div>';
-
-		part[1] = '<page size="A4">'+
-				'<center>'+
-					'<h3>Surat Permohonan Bantuan hibah</h3>'+
-					'<h4>Pemerintah provinsi Jawa Barat</h4>'+
-					'<h5>alamat</h5><br>'+
-				'</center>'+
-				'<div class="col-md-2">'+
-					'<h5>No</h5>'+
-				'</div>'+
-				'<div class="col-md-4">'+
-					'<h5>: 99 / xvi / 9 / 2017</h5>'+
-				'</div>'+
-				'<div class="col-md-6 text-right">'+
-					'<h5>Bandung, 16 September 2017</h5>'+
-				'</div>'+
-				'<div class="col-md-2">'+
-					'<h5>Perihal</h5>'+
-				'</div>'+
-				'<div class="col-md-8">'+
-					'<h5>: Permohonan bantuan hibah</h5>'+
-				'</div>'+
-				'<div class="clearfix"></div>'+
-				'<div>'+
-				'<p>'+
-					'kepada pemerintah kota bandung<br>'+
-					'orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ullamcorper massa. Aliquam et risus bibendum, posuere risus sed, rhoncus tellus. Phasellus blandit orci velit, vel consectetur eros imperdiet sed. Sed feugiat fermentum justo, id porta justo rhoncus sollicitudin. Mauris nibh lectus, mattis eget euismod et, egestas vitae elit. Nam luctus risus ut ante faucibus interdum. Suspendisse quis tincidunt augue, sed bibendum nunc. Nullam at dolor risus. Nam congue lacus sed accumsan pharetra. Quisque dui urna, tempus a tempus vitae, volutpat in ex. Quisque molestie eros nec mi condimentum faucibus. Mauris sed arcu convallis, sagittis enim in, pretium mi. Quisque blandit urna nec sagittis malesuada. Maecenas libero est, mattis vel nulla a, fringilla ultricies ante. Proin scelerisque volutpat metus, nec tincidunt urna luctus a.'+
-				'</p>'+
-				'<div class="col-md-offset-8 col-md-4">'+
-					'<h5>'+
-					'<center><br><br><br><br><br><br><br>'+
-					'bandung, 16 September 2017 <br><br><br><br><br><br><br>'+
-					'seseorang'+
-					'</center>'+
-					'</h5>'+
-				'</div>'+
+					'</div>'+
+					'<div class="col-md-offset-7 col-md-5 page">'+
+						'<h5>'+
+						'<center><br><br><br><br><br><br><br>'+
+						data[1].body[0].tanggal+'<br><br><br><br><br><br><br>'+
+						data[1].body[1].pemohon+
+						'</center>'+
+						'</h5>'+
+					'</div>'+
 				'</div>'+
 		'</page>'+
 		'<page size="A4">'+
