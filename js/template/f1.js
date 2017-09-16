@@ -388,7 +388,31 @@ function r_f1DetailLembaga(packet) {
 							'pemohon'	:'Yayasan xxy'
 						}
 					]}
-			]
+			];
+		table=[
+			{
+				'head':[
+					'No',
+					'Nama barang',
+					'Jumlah barang',
+					'Harga satuan',
+					'Total'
+				]},
+			{
+				'body': [
+					['1','x','x','x','x'],
+					['2','x','x','x','x'],
+					['3','x','x','x','x'],
+					['4','x','x','x','x'],
+					['5','x','x','x','x'],
+					['6','x','x','x','x'],
+					['7','x','x','x','x'],
+					['8','x','x','x','x'],
+					['9','x','x','x','x'],
+					['..','x','x','x','x']
+				]
+			}
+		];
 		//--open
 		head	= '';
 		body	= '<div class="row no-head"><div class="container">';
@@ -433,7 +457,30 @@ function r_f1DetailLembaga(packet) {
 				'</div>'+
 		'</page>'+
 		'<page size="A4">'+
-		'<center><h3>RAB</h3></center>'+
+			'<center><h3>RAB</h3></center>'+
+			'<div class="table-responsive">'+
+				'<table class="table table-striped">'+
+					'<thead>'+
+						'<tr>';
+							for(var a = 0; a < table[0].head.length; a++){
+								part[1] = part[1]+
+								'<td>'+table[0].head[a]+'</td>';
+							}
+						part[1] = part[1]+
+						'</tr>'+
+					'</thead>'+
+					'</tbody>';
+						for(var b = 0; b < table[1].body.length; b++){
+							part[1] = part[1] + '<tr>';
+								for(var c =0; c < table[1].body[b].length; c++){
+									part[1] = part[1] + '<td>'+table[1].body[b][c]+'</td>';
+								}
+							part[1] = part[1]+'</tr>';
+						}
+					part[1] = part[1] +
+					'</tbody>'+
+				'</table>'+
+			'</div>'+
 		'</page>';
 		part[0] = part[1] + '</div>';
 		body	= body 	  + part[0] + '</div></div>';
