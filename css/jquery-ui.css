@@ -319,7 +319,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker .ui-datepicker-header {
 	position: relative;
 	padding: 0;
-	background: #EB1460;
+	background: #1565C0;
     color: #FFF;
 	width: 262px;
     margin: auto;
@@ -1057,7 +1057,7 @@ a.ui-button:active,
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-	background: #EB1460;
+	background: #1565C0;
 	color: #FFF;
 }
 .ui-state-checked {

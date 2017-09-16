@@ -93,6 +93,7 @@ function r_navigateTo(index, packet, access) {
 
 			case 99 : r_fLogin(); 						break;
 			case 999: r_fNotification();				break;
+			case 88 : r_f8DetailPermohonan();			break;
 			default : r_fHome(); 						break;
 		}
 		
@@ -588,7 +589,7 @@ function r_headPageHtml(type, title){
 	}else {
 		headHtml = 
 		'<div class="col-md-3 hidden-sm hidden-xs inbound">' +
-			'<h4>DPLEGA 2.0</h4>' +
+			'<h4>TABAH 2.0</h4>' +
 		'</div>' +
 		'<div class="col-md-9 inbound text-right">' +
 				'<button type="button" class="clear go-login">LOGIN</button>' +
@@ -690,14 +691,14 @@ function r_fHome() {
 			'<div class="col-md-9 jumbotron-content bg-black-mirror">' +
 				'<div class="jumbotron-bg text-shadow">' +
 					'<div class="logo-container"><img class="logo-user" src="img/logo_jabar.png"></div>' +
-					'<h1>PUSAT DATA POTENSI LEMBAGA KEAGAMAAN DI JAWA BARAT</h1>' +
+					'<h1>TATA KELOLA BANTUAN HIBAH DI JAWA BARAT</h1>' +
 					'<h5>BIRO PELAYANAN DAN PENGEMBANGAN SOSIAL</h5>' +
 					'<p>' +
 						'Halo pengunjung ! <br/>' +
 						'Kami ucapkan selamat datang, akhirnya kami dapat kembali meningkatkan pelayanan kepada anda, dan tiada ' +
-						'hentinya kami terus melakukan perbaikan agar menjadi lebih baik lagi.<br/><br/>Dplega adalah layanan berbasis online kepada ' +
-						'masyarakat untuk menyediakan data kelembagaan yang telah tercatat secara legal serta telah melewati proses ' +
-						'verifikasi sehingga dinyatakan sah sebagai suatu kelembagaan.' +
+						'hentinya kami terus melakukan perbaikan agar menjadi lebih baik lagi.<br/><br/>Tabah adalah layanan berbasis online kepada ' +
+						'masyarakat untuk menyediakan data hibah yang telah tercatat dan atau telah melewati proses ' +
+						'verifikasi.' +
 					'</p>' +
 				'</div>' +
 			'</div>' +

@@ -376,178 +376,112 @@ function r_f1DetailLembaga(packet) {
 		//--open
 		head	= '';
 		body	= '<div class="row no-head"><div class="container">';
-		part[0] = '<div class="col-md-3">';
-		part[1] = '<div class="col-md-9">';
-		
-		//--left
-		if(data.profile[0] != null){
-			var temPic = "";
-			temPic = (data.profile[0].avatar != "") ? 'img/logo/' + data.profile[0].avatar : 'img/logo/avatar-5.jpg';
-			part[0] = part[0] +
-			'<div class="cards clear">' +
-				'<div class="cards-banner-blank long smalltron-ground">' +
-					'<div class="user-frame">' +
-						'<img src="' + temPic + '">' +
-						'<p class="caption">' +
-							'<span class="big">' + data.profile[0].nama + '</span>' +
-							'<span>Yayasan</span>' +
-						'</p>' +
-						'<button class="btn-option btn-default click-option" ' + 
-							'p-group		="f1"' + 
-							'p-target		="f111"' +
-							'p-id="' + data.profile[0].noreg + '" p-label="' + data.profile[0].nama + '"><i class="fa fa-ellipsis-h"></i></button>' +
-					'</div>' +
-				'</div>' +
-			'</div>' +
-			'<div class="cards flush">' +
-				'<div class="desc-frame">' +
-					'<div class="desc-box flush">' +
-						'<p class="text-set">' + data.profile[0].catatan + '</p>' +
-					'</div>' +
-					'<div class="desc-box i-left">' +
-						'<div class="icon-set"><span class="fa fa-phone"></span></div>' +
-						'<p class="text-set">' + data.profile[0].telp + '</p>' +
-					'</div>' +
-					'<div class="desc-box i-left">' +
-						'<div class="icon-set"><span class="fa fa-envelope"></span></div>' +
-						'<p class="text-set">' + data.profile[0].email + '</p>' +
-					'</div>' +
-					'<div class="desc-box i-left">' +
-						'<div class="icon-set"><span class="fa fa-globe"></span></div>' +
-						'<p class="text-set">' + data.profile[0].sosialMedia + '</p>' +
-					'</div>' +
-					'<div class="desc-box i-left">' +
-						'<div class="icon-set"><span class="fa fa-map-marker"></span></div>' +
-						'<p class="text-set">' + data.profile[0].alamat + '</p>' +
-					'</div>' +
-					'<div class="desc-box i-left">' +
-						'<p class="text-set"><span class="text-cyan click" id="go-maps" m-lng="' + data.profile[0].langitude + '" m-lat="' + data.profile[0].latitude + '">Lihat maps</span></p>' +
-					'</div>' +
-				'</div>' +
-			'</div>';
-				
-			//--render data
-			for(var loop = 0; loop < data.detail.length; loop++){
-				//--right
-				if(data.detail[loop].group == 'card'){
-					part[1] = part[1] +
-					'<div class="cards">' +
-						'<div class="cards-header">' +
-							'<p class="fixed">' + data.detail[loop].groupName + '</p>' +
-							'<div class="btn-collapse right">' +
-								'<button class="toggle-click clear" toggle-target="' + data.detail[loop].groupId+ '-group" type="button"><span class="fa fa-chevron-down"></span></button>' +
-							'</div>' +
-						'</div>' +
-					'</div>';
-					
-					var endLoopY = 0;
-					switch(data.detail[loop].type){
-						case 'table'		: part[1] = part[1] + '<div class="cards flush toggle-content ' + data.detail[loop].groupId + '-group">' + '<div class="desc-frame">';  endLoopY = data.detail[loop].items.length; break;
-						case 'list'			: part[1] = part[1] + '<div class="cards flush toggle-content ' + data.detail[loop].groupId + '-group">' + '<div class="row">'; endLoopY = data.detail[loop].items.length; break;
-						case 'table-list'	: part[1] = part[1] + '<div class="cards flush toggle-content ' + data.detail[loop].groupId + '-group">' + '<div class="row default">'; endLoopY = data.detail[loop].items[0].set.length;  break;
-					}
-					
-					
-					for(var loopY = 0; loopY < endLoopY; loopY++){	
-						switch(data.detail[loop].type){
-							case 'table'	:
-								part[1] = part[1] +
-								'<div class="desc-box">' +
-									'<div class="labels"><p class="text-set">' + data.detail[loop].items[loopY].label + '</p></div>' +
-									'<div class="divider"><p class="text-set">' + data.detail[loop].items[loopY].text + '</p></div>' +
-								'</div>';
-							break;
-							case 'list'	:
-								part[1] = part[1] +
-								'<div class="list-box">' +
-									'<div class="list-icon bg-' + data.detail[loop].items[loopY].color + '"><span class="fa fa-' + data.detail[loop].items[loopY].icon + '"></span></div>' +
-									'<p class="list-text">' + data.detail[loop].items[loopY].text + '</p>' +
-								'</div>';
-							break;
-							case 'table-list'	:
-									 if(data.detail[loop].items[0].set[loopY].size == "large") { part[1] = part[1] + '<div class="col-md-4">'; }
-								else if(data.detail[loop].items[0].set[loopY].size == "medium"){ part[1] = part[1] + '<div class="col-md-3">'; }
-								else if(data.detail[loop].items[0].set[loopY].size == "small") { part[1] = part[1] + '<div class="col-md-2">'; }
-								
-								var classAdd = "";
-								if(loopY > 0){ classAdd = "clear"; }
-								part[1] = part[1] +
-								'<div class="list-box ' + classAdd + '">';
-								
-								if(data.detail[loop].items[0].set[loopY].form == "text-icon"){ 
-									part[1] = part[1] +
-									'<div class="list-icon bg-' + data.detail[loop].items[0].set[loopY].color + '"><span class="fa fa-' + data.detail[loop].items[0].set[loopY].icon + '"></span></div>' +
-									'<p class="list-text"><strong>' + data.detail[loop].items[0].set[loopY].text + '</strong></p>';
-								}else if(data.detail[loop].items[0].set[loopY].form == "text"){
-									part[1] = part[1] +
-									'<p class="list-text">' + data.detail[loop].items[0].set[loopY].text + '</p>';
-								}else if(data.detail[loop].items[0].set[loopY].form == "button"){
-									part[1] = part[1] +
-									'<button type="button" class="clear list-text btn-link">' + data.detail[loop].items[0].set[loopY].text + '</button>';
-								}
-								
-								part[1] = part[1] + 
-									'</div>' +
-								'</div>';
-							break;
-						}
-					}
-					
-					part[1] = part[1] +
-						'</div>' +
-					'</div>';
-					
-				}else if(data.detail[loop].group == "img-viewer"){
-					part[1] = part[1] +
-					'<div class="cards-label plus">' +
-						'<p>' +
-							'<strong>' + data.detail[loop].groupName + ' (' + data.detail[loop].items.length + ')</strong>' +
-						'</p>' +
-					'</div>' +
-					'<div class="row default">';
-					for(var loopY = 0; loopY < data.detail[loop].items.length; loopY++){
-						var size = "";
-						if(
-							   data.detail[loop].items[loopY].picture != "saranaPrasarana/picture.png"
-							&& data.detail[loop].items[loopY].picture != "usaha/picture.png"){
-							size = "changed";
-						}	
+		part[0] = '<div class="col-md-offset-1 col-md-10">';
+		part[0] = part[0] +
+			// '<div class="cards flush" >'+
+				'<div class="col-md-12" >'+
+					'<div class="col-md-2" >'+
+						'<div class="group-box" >'+
+							'<div class="icon-set bg-green">'+
+								'<span class="fa fa-map-marker fa-2x"></span>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+					'<div class="col-md-8">'+
+						'<center>'+
+							'<h3>Surat Permohonan Bantuan hibah</h3>'+
+							'<h4>Pemerintah provinsi Jawa Barat</h4>'+
+							'<h5>alamat</h5>'+
+						'</center>'+
+					'</div>'+
+				'</div>'+
+				'<div class="col-md-6">'+
+					'<div class="col-md-4">'+
+					'<div class="row">'+
+						'<h5>No</h5>'+
+					'</div>'+
+					'</div>'+
+					'<div class="col-md-8">'+
+						'<h5>: 99 / xvi / 9 / 2017</h5>'+
+					'</div>'+
+					'<div class="col-md-4">'+
+						'<h5>Perihal</h5>'+
+					'</div>'+
+					'<div class="col-md-8">'+
+						'<h5>: Permohonan bantuan hibah</h5>'+
+					'</div>'+
+				'</div>'+
+				'<div class="col-md-6 text-right">'+
+					'<h5>Kepada sang pemikat hati</h5>'+
+				'</div>'+
+				'<div class="col-md-12">'+
+				'<br>'+
+					'<p>'+
+					'kepada pemerintah kota bandung<br>'+
+					'orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ullamcorper massa. Aliquam et risus bibendum, posuere risus sed, rhoncus tellus. Phasellus blandit orci velit, vel consectetur eros imperdiet sed. Sed feugiat fermentum justo, id porta justo rhoncus sollicitudin. Mauris nibh lectus, mattis eget euismod et, egestas vitae elit. Nam luctus risus ut ante faucibus interdum. Suspendisse quis tincidunt augue, sed bibendum nunc. Nullam at dolor risus. Nam congue lacus sed accumsan pharetra. Quisque dui urna, tempus a tempus vitae, volutpat in ex. Quisque molestie eros nec mi condimentum faucibus. Mauris sed arcu convallis, sagittis enim in, pretium mi. Quisque blandit urna nec sagittis malesuada. Maecenas libero est, mattis vel nulla a, fringilla ultricies ante. Proin scelerisque volutpat metus, nec tincidunt urna luctus a.'+
+					'</p>'+
+				'</div>'+
+				'<div class="col-md-offset-8 col-md-4">'+
+					'<h5>'+
+					'<center>'+
+					'bandung, 16 September 2017 <br><br><br><br><br><br><br>'+
+					'seseorang'+
+					'</center>'+
+					'</h5>'+
+				'</div>'+
+				'<div class="clearfix">'+
+				'</div>';
+			// '</div>';
 
-						part[1] = part[1] +
-						'<div class="col-md-3">' +
-							'<div class="tumb-cards">' +
-								'<div class="picture-box">' +
-									'<img class="pic-default ' + size + '" src="img/' + data.detail[loop].items[loopY].picture + '" />' +
-								'</div>' +
-								'<div class="desc-box">' +
-									'<p>' + data.detail[loop].items[loopY].desc + '</p>' +
-								'</div>' +
-							'</div>' +
-						'</div>';
-					}
-					part[1] = part[1] + '</div>';
-				}	
-			}
-
-		}else{
-			part[1] = part[1] + 
-			'<div class="cards">' +
-				'<div class="cards-header">' +
-					'<p class="fixed offset text-black">Data tidak ditemukan.</p>' +
-				'</div>' +
-			'</div>';
-		}
-		
-		part[0] = part[0] + '</div>';
-		part[1] = part[1] + '</div>';
-		body	= body 	  + part[0] + part[1] + '</div></div>';
+		part[1] = '<page size="A4">'+
+				'<center>'+
+					'<h3>Surat Permohonan Bantuan hibah</h3>'+
+					'<h4>Pemerintah provinsi Jawa Barat</h4>'+
+					'<h5>alamat</h5><br>'+
+				'</center>'+
+				'<div class="col-md-2">'+
+					'<h5>No</h5>'+
+				'</div>'+
+				'<div class="col-md-4">'+
+					'<h5>: 99 / xvi / 9 / 2017</h5>'+
+				'</div>'+
+				'<div class="col-md-6 text-right">'+
+					'<h5>Bandung, 16 September 2017</h5>'+
+				'</div>'+
+				'<div class="col-md-2">'+
+					'<h5>Perihal</h5>'+
+				'</div>'+
+				'<div class="col-md-8">'+
+					'<h5>: Permohonan bantuan hibah</h5>'+
+				'</div>'+
+				'<div class="clearfix"></div>'+
+				'<div>'+
+				'<p>'+
+					'kepada pemerintah kota bandung<br>'+
+					'orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ullamcorper massa. Aliquam et risus bibendum, posuere risus sed, rhoncus tellus. Phasellus blandit orci velit, vel consectetur eros imperdiet sed. Sed feugiat fermentum justo, id porta justo rhoncus sollicitudin. Mauris nibh lectus, mattis eget euismod et, egestas vitae elit. Nam luctus risus ut ante faucibus interdum. Suspendisse quis tincidunt augue, sed bibendum nunc. Nullam at dolor risus. Nam congue lacus sed accumsan pharetra. Quisque dui urna, tempus a tempus vitae, volutpat in ex. Quisque molestie eros nec mi condimentum faucibus. Mauris sed arcu convallis, sagittis enim in, pretium mi. Quisque blandit urna nec sagittis malesuada. Maecenas libero est, mattis vel nulla a, fringilla ultricies ante. Proin scelerisque volutpat metus, nec tincidunt urna luctus a.'+
+				'</p>'+
+				'<div class="col-md-offset-8 col-md-4">'+
+					'<h5>'+
+					'<center><br><br><br><br><br><br><br>'+
+					'bandung, 16 September 2017 <br><br><br><br><br><br><br>'+
+					'seseorang'+
+					'</center>'+
+					'</h5>'+
+				'</div>'+
+				'</div>'+
+		'</page>'+
+		'<page size="A4">'+
+		'<center><h3>RAB</h3></center>'+
+		'</page>';
+		part[0] = part[1] + '</div>';
+		body	= body 	  + part[0] + '</div></div>';
 		content = '<section id="kelembagaan">' + head + body + '</section>';
 		//--close
 		
 		//--gen
 		var temp = 3;
 		if(String(r_getCookie('userLevel')) == '1'){ temp = 0; }
-		headPage.html(r_headPageHtml(temp, 'Profil lembaga'));
+		headPage.html(r_headPageHtml(temp, 'Surat permohonan'));
 		mainPage.html(content).animate({'opacity': '1'},'fast','linear');
 		$("#preload").remove();
 		

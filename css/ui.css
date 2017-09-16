@@ -138,8 +138,8 @@ button.danger { background-color: #D32F2F; color: #FFF !important }
 button.success { background-color: #43A047; color: #FFF !important }
 button.warning { background-color: #FBC02D; color: #FFF !important }
 button.info { background-color: #039BE5; color: #FFF !important }
-button.main { background-color: #EB1460; color: #FFF !important }
-button.main:hover { background-color: #BF245A; color: #FFF !important }
+button.main { background-color: #1565C0; color: #FFF !important }
+button.main:hover { background-color: #0D47A1; color: #FFF !important }
 
 /* file browser */
 .browser-box { 
@@ -403,11 +403,11 @@ header.parent, header.blank {
 	z-index: 3;
 }
 
-/* header.parent { background-color: #EB1460 } */
+/* header.parent { background-color: #1565C0 } */
 header.clear { padding: 0 }
 header.clear div.inbound { height: 60px; line-height: 60px }
 header.clear div.inbound h4 { line-height: 40px }
-header.parent.theme, header.blank.theme { background-color: #EB1460 }
+header.parent.theme, header.blank.theme { background-color: #1565C0 }
 header.blank { position: absolute; height: auto }
 header.parent.fly {
 	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -460,12 +460,12 @@ header.parent div.search-box input {
 	font-size: 16px; 
 	color: #FFF;
 	border-color: #FFF;
-	background-color: #EB1460;
+	background-color: #1565C0;
 	border-bottom-color: #FFF;
 }
 
 header.parent div.search-box .search-close { cursor: pointer }
-header .click:hover { background-color: #BF245A; cursor: pointer }
+header .click:hover { background-color: #0D47A1; cursor: pointer }
 header.parent input:placeholder-shown, 
 header.parent input::-webkit-input-placeholder { color: rgba(255,255,255,0.5) }
 
@@ -503,7 +503,7 @@ main.parent {
 
 main.parent .row.head { 
 	padding-top: 30px;
-	background-color: #EB1460; 
+	background-color: #1565C0; 
 }
 
 main.parent .row.head.clear-black { padding: 0; background-color: #333 }
@@ -517,7 +517,7 @@ main.parent .row.foot {
 	padding: 15px 0;
 	background-color: #4B4B4D; 
 	color: #FFF;
-	border-bottom: 15px solid #EB1460;
+	border-bottom: 15px solid #1565C0;
 }
 
 main.parent .row.no-head { padding-top: 30px; }
@@ -696,7 +696,7 @@ footer.parent .author-box img { height: 30px; float: right }
 .cards .cards-header { position: relative }
 .cards .cards-header.special { text-align: center }
 .cards .cards-header h4 { margin-bottom: 5px }
-.cards .cards-header.special h4 { font-weight: bold; color: #EB1460 }
+.cards .cards-header.special h4 { font-weight: bold; color: #1565C0 }
 .cards .cards-header.bold h4 { font-weight: bold; color: #FFF }
 .cards .cards-header p { color: rgba(0,0,0,0.5) }
 .cards .cards-header p.invert { color: #FFF }
@@ -740,7 +740,7 @@ footer.parent .author-box img { height: 30px; float: right }
 	height: 150px;
 	/* margin-bottom: 15px; */
 	color: #FFF;
-	background-color: #EB1460;
+	background-color: #1565C0;
 }
 
 .cards .cards-banner:after {
@@ -954,7 +954,7 @@ footer.parent .author-box img { height: 30px; float: right }
 .cards .article-box .body .title { margin-bottom: 20px }
 .cards .article-box .body .content { color: rgba(0,0,0,0.5); margin: 20px 0; font-size: 16px; }
 .cards .article-box .foot { padding: 5px 30px 20px 30px }
-.cards .article-box .foot .btn-link { color: #EB1460 }
+.cards .article-box .foot .btn-link { color: #1565C0 }
 .cards .article-box img { /*max-width: 40%*/ width: 100% }
 .cards .article-box img.left { float: left; margin-right: 25px }
 .cards .article-box img.right { float: left; margin-left: 25px }
@@ -1048,7 +1048,7 @@ footer.parent .author-box img { height: 30px; float: right }
 .tumb-cards .desc-box {
 	min-height: 100px;
 	padding: 20px;
-	background-color: #EB1460;
+	background-color: #1565C0;
 	color: #FFF;
 	font-weight: bold;
 }
@@ -1206,7 +1206,7 @@ footer.parent .author-box img { height: 30px; float: right }
 	cursor: pointer
 }
 
-.tab-header ul li:hover { background-color: #BF245A }
+.tab-header ul li:hover { background-color: #0D47A1 }
 .tab-header ul li.active { border-color: #FBC02D }
 
 .tab-container { display: none } 
@@ -1398,7 +1398,7 @@ footer.parent .author-box img { height: 30px; float: right }
 #home .banner-box .text.clear-left { padding: 0 }
 
 #home .banner-box .link { 
-	color: #EB1460;
+	color: #1565C0;
 	font-size: 30px;
     margin: 15px;
 }
@@ -1480,8 +1480,8 @@ footer.parent .author-box img { height: 30px; float: right }
 .text-pink { color: #F06277 !important }
 .text-brown { color: #CE8F64 !important }
 .text-black { color: #000000 !important }
-.theme-color   { color: #EB1460 !important }
-.theme-color-o { color: #BF245A !important }
+.theme-color   { color: #1565C0 !important }
+.theme-color-o { color: #0D47A1 !important }
 .text-shadow { text-shadow: 1px 0px rgba(0,0,0,0.3); }
 
 .bg-white { background-color: #FFF !important }
@@ -1492,7 +1492,7 @@ footer.parent .author-box img { height: 30px; float: right }
 .bg-purple { background-color: #7B1FA2 !important; color: #FFF !important }
 .bg-sky { background-color: #039BE5 !important; color: #FFF !important }
 .bg-orange { background-color: #EF6C00 !important; color: #FFF !important }
-.bg-theme { background-color: #EB1460 !important; color: #FFF !important }
+.bg-theme { background-color: #1565C0 !important; color: #FFF !important }
 .bg-black-mirror { background-color: rgba(0,0,0,0.3) !important; }
 /* transformation */
 /** div {
@@ -1607,7 +1607,7 @@ footer.parent .author-box img { height: 30px; float: right }
 @keyframes color {
   100%,
   0% {
-    stroke: #EB1460; /* warna preloader */
+    stroke: #1565C0; /* warna preloader */
   }
 }
 
@@ -1665,4 +1665,19 @@ footer.parent .author-box img { height: 30px; float: right }
 /* large */
 @media (min-width: 1200px) {
 	
+}
+
+/*page A4*/
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+	width: 210mm;
+	min-height: 297mm;
+	padding: 20mm;
+/*margin: 10mm auto;*/
 }
